@@ -55,6 +55,19 @@ const Home = () => {
     }
   ];
 
+  const partnerLogos = [
+    { name: "Partenaire 1", src: "/images/partners_logos/detoure/0859fa7c97_download__282_29.png" },
+    { name: "Partenaire 2", src: "/images/partners_logos/detoure/0a1c76a7cf_download__283_29.png" },
+    { name: "Partenaire 3", src: "/images/partners_logos/detoure/0a95ea8b67_download__281_29.png" },
+    { name: "Partenaire 4", src: "/images/partners_logos/detoure/177200db45_download__282_29.png" },
+    { name: "Partenaire 5", src: "/images/partners_logos/detoure/1e05b4cb20_download__284_29.png" },
+    { name: "Partenaire 6", src: "/images/partners_logos/detoure/3e275ee9fa_download__281_29.png" },
+    { name: "Partenaire 7", src: "/images/partners_logos/detoure/84a0806776_download__281_29.png" },
+    { name: "Partenaire 8", src: "/images/partners_logos/detoure/c19d9662bc_gls-brasseries-cmr.png" },
+    { name: "Partenaire 9", src: "/images/partners_logos/detoure/c3787b6119_download__285_29.png" },
+    { name: "Partenaire 10", src: "/images/partners_logos/detoure/eb27f5a7da_logo_gls_inter.png" }
+  ];
+
   return (
     <div className="overflow-hidden bg-white">
       {/* Hero Section with Parallax - Fixed Height and Content Layout */}
@@ -324,35 +337,29 @@ const Home = () => {
           <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
           
           <div className="flex animate-infinite-scroll gap-8 py-4">
-            {[
-              "BOLLORÉ", "MAERSK", "CMA CGM", "DHL", "MSC", "HAPAG-LLOYD", 
-              "PORT DE DOUALA", "SYDONIA++", "AIR FRANCE CARGO", "EMIRATES SKYCARGO",
-              "CAMRAIL", "GUCE", "SGS", "BUREAU VERITAS", "INTERTEK"
-            ].map((partner, i) => (
+            {partnerLogos.map((partner, i) => (
               <div 
-                key={`${partner}-${i}`}
-                className="flex-shrink-0 h-24 w-60 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-default group hover:bg-white hover:shadow-xl hover:border-brand-accent/20"
+                key={`${partner.name}-${i}`}
+                className="flex h-24 w-60 flex-shrink-0 cursor-default items-center justify-center rounded-2xl border border-slate-100 bg-white px-5 transition-all group hover:shadow-xl hover:border-brand-accent/20"
               >
-                <div className="flex flex-col items-center">
-                  <span className="text-xl font-black text-slate-400 group-hover:text-brand-primary transition-colors tracking-tighter uppercase">{partner}</span>
-                  <div className="h-0.5 w-0 group-hover:w-full bg-brand-accent transition-all duration-500 mt-1" />
-                </div>
+                <img
+                  src={partner.src}
+                  alt={`Logo ${partner.name}`}
+                  className="h-14 w-full object-contain opacity-80 transition-all duration-500 group-hover:opacity-100"
+                />
               </div>
             ))}
             {/* Duplicate for seamless loop */}
-            {[
-              "BOLLORÉ", "MAERSK", "CMA CGM", "DHL", "MSC", "HAPAG-LLOYD", 
-              "PORT DE DOUALA", "SYDONIA++", "AIR FRANCE CARGO", "EMIRATES SKYCARGO",
-              "CAMRAIL", "GUCE", "SGS", "BUREAU VERITAS", "INTERTEK"
-            ].map((partner, i) => (
+            {partnerLogos.map((partner, i) => (
               <div 
-                key={`dup-${partner}-${i}`}
-                className="flex-shrink-0 h-24 w-60 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-default group hover:bg-white hover:shadow-xl hover:border-brand-accent/20"
+                key={`dup-${partner.name}-${i}`}
+                className="flex h-24 w-60 flex-shrink-0 cursor-default items-center justify-center rounded-2xl border border-slate-100 bg-white px-5 transition-all group hover:shadow-xl hover:border-brand-accent/20"
               >
-                <div className="flex flex-col items-center">
-                  <span className="text-xl font-black text-slate-400 group-hover:text-brand-primary transition-colors tracking-tighter uppercase">{partner}</span>
-                  <div className="h-0.5 w-0 group-hover:w-full bg-brand-accent transition-all duration-500 mt-1" />
-                </div>
+                <img
+                  src={partner.src}
+                  alt={`Logo ${partner.name}`}
+                  className="h-14 w-full object-contain opacity-80 transition-all duration-500 group-hover:opacity-100"
+                />
               </div>
             ))}
           </div>
