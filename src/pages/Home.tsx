@@ -71,7 +71,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden bg-white">
       {/* Hero Section with Parallax - Fixed Height and Content Layout */}
-      <section ref={heroRef} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative flex min-h-[100dvh] items-center justify-center overflow-x-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/70 to-slate-900/10 z-10" />
           <img 
@@ -81,7 +81,7 @@ const Home = () => {
           />
         </motion.div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 md:py-0">
+        <div className="relative z-20 mx-auto max-w-7xl px-4 pb-20 pt-28 text-center sm:px-6 md:pb-24 md:pt-32 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -96,7 +96,7 @@ const Home = () => {
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] leading-[1] tracking-tighter"
+              className="text-4xl xs:text-5xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] leading-[1] tracking-tighter"
             >
               L’excellence <br className="hidden xs:block" />
               <span className="text-brand-accent italic">Logistique</span>
@@ -113,11 +113,11 @@ const Home = () => {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-5 justify-center items-center px-6 sm:px-0"
             >
-              <Link href="/contact" className="w-full sm:w-auto group relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-5 rounded-full font-black text-lg overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(37,99,235,0.4)]">
+              <Link href="/contact" className="inline-flex w-full items-center justify-center sm:w-auto group relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-5 rounded-full font-black text-lg overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(37,99,235,0.4)]">
                 <span className="relative z-10 flex items-center justify-center gap-3">Obtenir un devis <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" /></span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
               </Link>
-              <Link href="/about" className="text-white font-bold text-lg hover:text-brand-accent transition-all flex items-center gap-2 group p-4 bg-white/5 backdrop-blur-sm rounded-full sm:bg-transparent sm:backdrop-blur-none hover:bg-white/10 sm:hover:bg-transparent">
+              <Link href="/about" className="inline-flex items-center gap-2 rounded-full bg-white/10 p-4 text-lg font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:text-brand-accent">
                 Découvrir l'agence <ChevronRight size={22} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
