@@ -22,6 +22,19 @@ const About = () => {
     { title: "RSE & QHSE", desc: "Respect des normes de sécurité et environnementales.", icon: <ShieldCheck /> }
   ];
 
+  const partnerLogos = [
+    { name: "Partenaire 1", src: "/images/partners_logos/detoure/0859fa7c97_download__282_29.png" },
+    { name: "Partenaire 2", src: "/images/partners_logos/detoure/0a1c76a7cf_download__283_29.png" },
+    { name: "Partenaire 3", src: "/images/partners_logos/detoure/0a95ea8b67_download__281_29.png" },
+    { name: "Partenaire 4", src: "/images/partners_logos/detoure/177200db45_download__282_29.png" },
+    { name: "Partenaire 5", src: "/images/partners_logos/detoure/1e05b4cb20_download__284_29.png" },
+    { name: "Partenaire 6", src: "/images/partners_logos/detoure/3e275ee9fa_download__281_29.png" },
+    { name: "Partenaire 7", src: "/images/partners_logos/detoure/84a0806776_download__281_29.png" },
+    { name: "Partenaire 8", src: "/images/partners_logos/detoure/c19d9662bc_gls-brasseries-cmr.png" },
+    { name: "Partenaire 9", src: "/images/partners_logos/detoure/c3787b6119_download__285_29.png" },
+    { name: "Partenaire 10", src: "/images/partners_logos/detoure/eb27f5a7da_logo_gls_inter.png" }
+  ];
+
   return (
     <div className="pt-20 overflow-hidden">
       {/* Hero - Cinematic */}
@@ -103,12 +116,14 @@ const About = () => {
                     Connectés aux plus grands acteurs du commerce international pour vous offrir une portée sans limites.
                  </p>
               </div>
-              <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                 {[
-                   "MAERSK", "BOLLORÉ", "CMA CGM", "DHL", "EMIRATES", "SYDONIA++"
-                 ].map((partner) => (
-                   <div key={partner} className="h-20 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-lg transition-all group cursor-default">
-                      <span className="text-sm font-black text-slate-400 group-hover:text-brand-accent transition-colors tracking-widest">{partner}</span>
+              <div className="grid w-full grid-cols-2 gap-4 md:w-2/3 sm:grid-cols-3 lg:grid-cols-5">
+                 {partnerLogos.map((partner) => (
+                   <div key={partner.name} className="flex h-20 items-center justify-center rounded-2xl border border-slate-100 bg-white px-3 transition-all group hover:shadow-lg hover:border-brand-accent/20">
+                      <img
+                        src={partner.src}
+                        alt={`Logo ${partner.name}`}
+                        className="h-12 w-full object-contain opacity-80 transition-all duration-500 group-hover:opacity-100"
+                      />
                    </div>
                  ))}
               </div>
